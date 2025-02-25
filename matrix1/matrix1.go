@@ -3,7 +3,7 @@
 package matrix1
 
 type Number interface {
-    ~float32 | ~float64
+    ~float32 | ~float64 | ~int
 }
 
 
