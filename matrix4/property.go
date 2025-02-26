@@ -3,9 +3,9 @@ package matrix4
 
 
 func (m *Matrix4[T]) isValidIndex(index1, index2, index3, index4 int) bool {
-    if (index1 < 0 || index1 >= m.size1) && 
-        (index2 < 0 || index2 >= m.size2) &&
-        (index3 < 0 || index3 >= m.size3) &&
+    if (index1 < 0 || index1 >= m.size1) ||
+        (index2 < 0 || index2 >= m.size2) ||
+        (index3 < 0 || index3 >= m.size3) ||
         (index4 < 0 || index4 >= m.size4) {
         panic("Index not in range!")
     }

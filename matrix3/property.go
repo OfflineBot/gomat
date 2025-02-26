@@ -3,8 +3,8 @@ package matrix3
 
 
 func (m *Matrix3[T]) isValidIndex(index1, index2, index3 int) bool {
-    if (index1 < 0 || index1 >= m.size1) && 
-        (index2 < 0 || index2 >= m.size2) && 
+    if (index1 < 0 || index1 >= m.size1) ||
+        (index2 < 0 || index2 >= m.size2) ||
         (index3 < 0 || index3 >= m.size3) {
         panic("Index not in range!")
     }

@@ -6,6 +6,12 @@ func (m *Matrix1[T]) checkShapes(size int) {
     if m.Shape() != size { panic("Shapes dont match!") }
 }
 
+func (m *Matrix1[T]) checkInsideShape(size int) {
+    if size < 1 || m.Shape() >= size {
+        panic("Shapes dont match!")
+    }
+}
+
 // Add Matrix Elementwise
 func (m *Matrix1[T]) AddMatrix1(other *Matrix1[T]) {
     m.checkShapes(other.Shape())
@@ -18,7 +24,7 @@ func (m *Matrix1[T]) AddMatrix1(other *Matrix1[T]) {
 
 // Add Value at index
 func (m *Matrix1[T]) AddIndex(value T, index int) {
-    m.checkShapes(index)
+    m.checkInsideShape(index)
     val := m.GetValue(index)
     m.SetValue(val + value, index)
 }
@@ -36,7 +42,7 @@ func (m *Matrix1[T]) SubMatrix1(other *Matrix1[T]) {
 
 // Sub Value at index
 func (m *Matrix1[T]) SubIndex(value T, index int) {
-    m.checkShapes(index)
+    m.checkInsideShape(index)
     val := m.GetValue(index)
     m.SetValue(val - value, index)
 }
@@ -54,7 +60,7 @@ func (m *Matrix1[T]) MulMatrix1(other *Matrix1[T]) {
 
 // Mul Value at index
 func (m *Matrix1[T]) MulIndex(value T, index int) {
-    m.checkShapes(index)
+    m.checkInsideShape(index)
     val := m.GetValue(index)
     m.SetValue(val * value, index)
 }
@@ -72,7 +78,7 @@ func (m *Matrix1[T]) DivMatrix1(other *Matrix1[T]) {
 
 // Div Value at index
 func (m *Matrix1[T]) DivIndex(value T, index int) {
-    m.checkShapes(index)
+    m.checkInsideShape(index)
     val := m.GetValue(index)
     m.SetValue(val / value, index)
 }
