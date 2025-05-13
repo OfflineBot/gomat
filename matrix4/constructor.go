@@ -43,7 +43,7 @@ func NewMatrix4[T Number](value [][][][]T) *Matrix4[T] {
 }
 
 
-func RandomMatrix1[T Number](size1, size2, size3, size4 int, min, max T) *Matrix4[T] {
+func RandomMatrix4[T Number](size1, size2, size3, size4 int, min, max T) *Matrix4[T] {
     m := EmptyMatrix4[T](size1, size2, size3, size4)
     m.FillRandom(min, max)
     return m

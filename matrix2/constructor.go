@@ -28,7 +28,7 @@ func NewMatrix2[T Number](value [][]T) *Matrix2[T] {
 }
 
 
-func RandomMatrix1[T Number](rows, cols int, min, max T) *Matrix2[T] {
+func RandomMatrix2[T Number](rows, cols int, min, max T) *Matrix2[T] {
     m := EmptyMatrix2[T](rows, cols)
     m.FillRandom(min, max)
     return m

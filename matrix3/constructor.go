@@ -37,7 +37,7 @@ func NewMatrix3[T Number](value [][][]T) *Matrix3[T] {
 }
 
 
-func RandomMatrix1[T Number](size1, size2, size3 int, min, max T) *Matrix3[T] {
+func RandomMatrix3[T Number](size1, size2, size3 int, min, max T) *Matrix3[T] {
     m := EmptyMatrix3[T](size1, size2, size3)
     m.FillRandom(min, max)
     return m
