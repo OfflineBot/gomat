@@ -33,7 +33,7 @@ func (m *Matrix2[T]) AddMatrix2(other *Matrix2[T]) {
 
 // Add Matrix1 Elementwise
 func (m *Matrix2[T]) AddMatrix1(other *matrix1.Matrix1[T]) {
-    m.checkShapes1(other.Shape())
+    //m.checkShapes1(other.Shape())
     for i := range m.Shape()[0] {
         for j := range m.Shape()[1] {
             val := m.GetValue(i, j)
