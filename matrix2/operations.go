@@ -4,7 +4,7 @@ package matrix2
 import "github.com/OfflineBot/gomat/matrix1"
 
 func (m *Matrix2[T]) checkShapes1(size1 int) {
-    if m.Shape()[0] != size1 { panic("Shapes dont match!") }
+    if m.Shape()[1] != size1 { panic("Shapes dont match!") }
 }
 
 func (m *Matrix2[T]) checkShapes2(size1, size2 int) {
