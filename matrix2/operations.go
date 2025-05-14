@@ -1,8 +1,6 @@
 package matrix2
 
 import (
-	"fmt"
-
 	"github.com/OfflineBot/gomat/matrix1"
 )
 
