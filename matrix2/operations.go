@@ -34,7 +34,7 @@ func (m *Matrix2[T]) AddMatrix2(other *Matrix2[T]) {
 
 // Add Matrix1 Elementwise
 func (m *Matrix2[T]) AddMatrix1(other *matrix1.Matrix1[T]) {
-    //m.checkShapes1(other.Shape())
+    m.checkShapes1(other.Shape())
     for i := range m.Shape()[0] {
         for j := range m.Shape()[1] {
             val := m.GetValue(i, j)
@@ -70,7 +70,7 @@ func (m *Matrix2[T]) SubMatrix1(other *matrix1.Matrix1[T]) {
     for i := range m.Shape()[0] {
         for j := range m.Shape()[1] {
             val := m.GetValue(i, j)
-            m.SetValue(val - other.GetValue(i), i, j)
+            m.SetValue(val - other.GetValue(j), i, j)
         }
     }
 }
@@ -102,7 +102,7 @@ func (m *Matrix2[T]) MulMatrix1(other *matrix1.Matrix1[T]) {
     for i := range m.Shape()[0] {
         for j := range m.Shape()[1] {
             val := m.GetValue(i, j)
-            m.SetValue(val * other.GetValue(i), i, j)
+            m.SetValue(val * other.GetValue(j), i, j)
         }
     }
 }
@@ -134,7 +134,7 @@ func (m *Matrix2[T]) DivMatrix1(other *matrix1.Matrix1[T]) {
     for i := range m.Shape()[0] {
         for j := range m.Shape()[1] {
             val := m.GetValue(i, j)
-            m.SetValue(val / other.GetValue(i), i, j)
+            m.SetValue(val / other.GetValue(j), i, j)
         }
     }
 }
